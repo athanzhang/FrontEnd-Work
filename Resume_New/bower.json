@@ -1,0 +1,25 @@
+{
+  "name": "athanzhang",
+  "description": "my awesome resume",
+  "main": "Resume.html",
+  "keywords": [
+    "resume"
+  ],
+  "authors": [
+    "athan"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.6.3"
+  }
+}
