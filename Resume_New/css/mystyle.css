@@ -22,6 +22,13 @@ hr {
 	margin-bottom: 10px;
 	width: 40%;
 }
+.jumbotron img {
+    position: relative;
+    top: -30px;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
 .jumbotron h3 {
 	margin-top: 10px;
 	padding-left: 34%;
@@ -38,10 +45,66 @@ hr {
 	color: #fff;
 }
 
-/*aabout_me*/
-#about_me img {
-	height: 400px;
-	width: 400px;
+/*about_me*/
+#about_me ul li:nth-child(1) h4{
+    position: relative;
+    top: 7px;
+    color: #798795;
+}
+#about_me ul li:nth-child(2) h4 {
+    position: relative;
+    top: 4px;
+}
+#about_me ul li:nth-child(3) h4 {
+    position: relative;
+    top: 4px;
+}
+#about_me ul li:nth-child(5) h4 {
+    position: relative;
+    top: 7px;
+}
+#about_me ul li:nth-child(6) h4 {
+    position: relative;
+    top: 7px;
+}
+
+/*about_me description*/
+blockquote{
+    border-left:none
+}
+
+.quote-badge{
+    background-color: rgba(0, 0, 0, 0.2);   
+}
+
+.quote-box{
+    position: relative;
+    top: 75px;
+    overflow: hidden;
+    margin-top: -50px;
+    padding-top: -100px;
+    border-radius: 17px;
+    background-color: #4ADFCC;
+    margin-top: 25px;
+    color:white;    
+    box-shadow: 2px 2px 2px 2px #E0E0E0;
+    
+}
+
+.quotation-mark{
+    
+    margin-top: -10px;
+    font-weight: bold;
+    font-size:100px;
+    color:white;
+    font-family: "Times New Roman", Georgia, Serif;
+    
+}
+
+.quote-box .quote-text{
+    
+    font-size: 19px;
+    margin-bottom: 43%;
 }
 
 /*begin timeline*/
@@ -194,6 +257,9 @@ hr {
     .timeline-body > p + p {
         margin-top: 5px;
     }
+.timeline-heading p small {
+    color: #000;
+}    
 
 /*end timeline */
 
@@ -257,7 +323,7 @@ hr {
 
 .bs-calltoaction.bs-calltoaction-info{
     color: #fff;
-    background-color: #5bc0de;
+    background-color: #4ADFCC;
     border-color: #46b8da;
 }
 
@@ -285,6 +351,15 @@ hr {
 .bs-calltoaction.bs-calltoaction-warning .cta-button .btn,
 .bs-calltoaction.bs-calltoaction-danger .cta-button .btn{
     border-color:#fff;
+}
+
+.list-group-item {
+    border: none;
+    background-color: #4ADFCC;
+}
+.list-group {
+    position: relative;
+    left: 12%;
 }
 
 /*end skills*/
