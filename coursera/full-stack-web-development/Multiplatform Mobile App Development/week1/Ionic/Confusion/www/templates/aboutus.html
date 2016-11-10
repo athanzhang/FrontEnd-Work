@@ -13,6 +13,15 @@
         	<div class="item item-divider">
         		Corporate Leadership
         	</div>
+        	<div class="item item-text-wrap list" ng-repeat="leader in leadership">
+        		<a href="#" class="item item-avatar">
+        			<img ng-src="{{baseURL+leader.image}}">
+        			<h2>{{leader.name}}</h2>
+        			<h3>{{leader.designation}}</h3>
+        			<p>{{leader.description}}</p>
+        		</a>
+        		
+        	</div>
         </div>
     </ion-content>
 </ion-view>
