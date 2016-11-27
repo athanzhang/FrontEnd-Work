@@ -6,14 +6,22 @@ angular.module('weatherApp')
 			var	longitude = longitude;
 
 			$.ajax({
+
+				// Baidu API
+
+				   // url: "http://api.map.baidu.com/geocoder/v2/?location="+latitude+","+longitude+"&output=json&pois=1&ak=E4cNuwV0MW72Rc8HHf3dNiFBYWYfXQuv",
+				   url: "http://api.map.baidu.com/geocoder/v2/?location=30.52,114.31&output=json&pois=1&ak=E4cNuwV0MW72Rc8HHf3dNiFBYWYfXQuv",
+
+
+				   // google API
 				// url: "http://maps.google.com/maps/api/geocode/json?latlng="+latitude+","+longitude+"&language=zh-TW&sensor=true",
-				url: "http://maps.google.com/maps/api/geocode/json?latlng=30.52,114.31&language=zh-TW&sensor=true",
+				// url: "http://maps.google.com/maps/api/geocode/json?latlng=30.52,114.31&language=zh-TW&sensor=true",
 				async: true,
-				dataType: 'json',
+				dataType: 'jsonp',
 				Method: 'get',
 				success: function(response) {
-					var address_components = response.results[0].address_components;
-					callback(address_components[2].short_name);
+					var addressComponent = response.result.addressComponent;
+					callback(addressComponent.city);
 					
 				}
 			});

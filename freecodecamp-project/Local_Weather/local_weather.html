@@ -38,8 +38,8 @@
                         <div class="item">
                             <img class="img-responsive" src="images/co2.png">
                             <div class="carousel-caption">                            	                       		
-                            	<h1 ng-bind="weatherData.pm25.pm25.quality" style="position: relative;top:-20px;"></h1>                         	                           	
-                               	<h3 ng-bind="activity" style="position: relative;top:-20px;"></h3>
+                            	<h2 ng-bind="weatherData.pm25.pm25.quality" style="position: relative;top:-20px;"></h2>                         	                           	
+                               	<h4 ng-bind="activity" style="position: relative;top:-20px;"></h4>
                                 <div style="position: relative;top:-20px;">
                                 	<span ng-bind="curPm"></span>
                                 	<span ng-bind="weatherData.pm25.pm25.curPm"></span>
@@ -59,8 +59,10 @@
                 </div>
             </div>
         </div>
-        <div class="row row-content"></div>
-        <div class="row row-content"></div>
+        <div class="row row-content">
+            
+        </div>
+        
     </div>
 </body>
 <script src="./3rd/jquery-3.1.1.js"></script>
