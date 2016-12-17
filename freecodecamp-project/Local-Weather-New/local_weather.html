@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html ng-app="weatherApp">
+
+<head>
+    <title>athan's weather app</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./3rd/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./3rd/bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="./3rd/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="./3rd/weather-icons-master/css/weather-icons.css">
+    <link rel="stylesheet" type="text/css" href="./3rd/weather-icons-master/css/weather-icons-wind.min.css">
+    <link rel="stylesheet" type="text/css" href="css/local_weather.css">
+</head>
+
+<body>
+    <div class="container" ng-controller="WeatherController">
+        <div class="row row-content">
+            <div class="col-xs-12">
+                <div class="col-xs-5 col-xs-offset-4">
+                    <div class="col-xs-offset-3">
+                        <h1>
+                        <span ng-bind="cityName"></span>
+                        <span ng-bind="countryName"></span>
+                        </h1>
+                    </div>
+                    <div id="out"></div>
+                </div>
+            </div>
+            <div class="col-xs-12" style="margin-top: 10px;">
+                <div class="col-xs-7 col-xs-offset-3">
+                    <div class="col-xs-offset-4">
+                        <h4>
+                        <span> </span>
+                        <span ng-bind="week+weatherData.weather[0].week"></span>
+                        <span>  </span>
+                        <span ng-bind="weatherData.weather[0].date"></span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12" style="margin-top: 20px;">
+                <div class="col-xs-6 col-xs-offset-4">
+                    <div class="col-xs-3 col-xs-offset-2">
+                        <img ng-src="{{weatherImage}}">
+                    </div>
+                    <div class="col-xs-5">
+                        <h1>
+                        <span ng-bind="weatherData.weather[0].info.day[2]"></span>                        
+                        <span ng-bind="du"></span>                        
+
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="col-xs-2 col-xs-offset-6">
+                    <div class="col-xs-offset-4">
+                        <h4 ng-bind="weatherData.realtime.weather.info"></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-xs-9 col-xs-offset-2">
+                <div class="col-xs-3">
+                    <h5 ng-bind="week+weatherData.weather[1].week" style="padding-left: 0.5em;"></h5>
+                </div>
+                <div class="col-xs-3">
+                    <h5 ng-bind="week+weatherData.weather[2].week" style="padding-left: 0.5em;"></h5>
+                </div>
+                <div class="col-xs-3">
+                    <h5 ng-bind="week+weatherData.weather[3].week" style="padding-left: 0.5em;"></h5>
+                </div>
+                <div class="col-xs-3">
+                    <h5 ng-bind="week+weatherData.weather[4].week" style="padding-left: 0.5em;"></h5>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-xs-9 col-xs-offset-2">
+                <div class="col-xs-3">
+                    <i ng-class="{'wi wi-day-sunny':sunny,'wi wi-day-cloudy':cloudy,'wi wi-day-hail':hail}">
+                    
+                </i>
+                </div>
+                <div class="col-xs-3">
+                    <i ng-class="{'wi wi-day-sunny':sunny,'wi wi-day-cloudy':cloudy,'wi wi-day-hail':hail}">
+                    
+                </i>
+                </div>
+                <div class="col-xs-3">
+                    <i ng-class="{'wi wi-day-sunny':sunny,'wi wi-day-cloudy':cloudy,'wi wi-day-hail':hail}">
+                    
+                </i>
+                </div>
+                <div class="col-xs-3">
+                    <i ng-class="{'wi wi-day-sunny':sunny,'wi wi-day-cloudy':cloudy,'wi wi-day-hail':hail}">
+                    
+                </i>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;margin-bottom: 30px;">
+            <div class="col-xs-9 col-xs-offset-2">
+                <div class="col-xs-3" ng-repeat="info in weatherInfo track by $index">
+                    <h5 ng-bind="info" style="margin-left: 1em;"></h5>
+                </div>                
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./3rd/jquery-3.1.1.js"></script>
+<script src="./3rd/bootstrap/js/bootstrap.js"></script>
+<script src="./3rd/angular.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/service.js"></script>
+
+</html>
+
+
+
