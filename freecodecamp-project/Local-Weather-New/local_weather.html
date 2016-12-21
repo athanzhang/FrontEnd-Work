@@ -17,7 +17,7 @@
     <div class="container" ng-controller="WeatherController">
         <div class="row row-content">
             <div class="col-xs-12">
-                <div class="col-xs-5 col-xs-offset-4">
+                <div class="col-xs-6 col-xs-offset-2 text-center">
                     <div class="col-xs-offset-3">
                         <h1>
                         <span ng-bind="cityName"></span>
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="col-xs-12" style="margin-top: 10px;">
-                <div class="col-xs-7 col-xs-offset-3">
+                <div class="col-xs-8 col-xs-offset-2">
                     <div class="col-xs-offset-4">
                         <h4>
                         <span> </span>
@@ -41,10 +41,10 @@
             </div>
             <div class="col-xs-12" style="margin-top: 20px;">
                 <div class="col-xs-6 col-xs-offset-4">
-                    <div class="col-xs-3 col-xs-offset-2">
+                    <div class="col-xs-3 col-xs-offset-1" style="margin-top: 1em;">
                         <img ng-src="{{weatherImage}}">
                     </div>
-                    <div class="col-xs-5">
+                    <div class="col-xs-5 col-xs-pull-1">
                         <h1>
                         <span ng-bind="weatherData.weather[0].info.day[2]"></span>                        
                         <span ng-bind="du"></span>                        
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="col-xs-12">
-                <div class="col-xs-2 col-xs-offset-6">
+                <div class="col-xs-6 col-xs-offset-2 text-center">
                     <div class="col-xs-offset-4">
                         <h4 ng-bind="weatherData.realtime.weather.info"></h4>
                     </div>
@@ -64,38 +64,23 @@
         <div class="row" style="margin-top: 40px;">
             <div class="col-xs-9 col-xs-offset-2">
                 <div class="col-xs-3">
-                    <h5 ng-bind="week+weatherData.weather[1].week" style="padding-left: 0.5em;"></h5>
+                    <h5 ng-bind="week+weatherData.weather[1].week" style="padding-left: 0.2em;"></h5>
                 </div>
                 <div class="col-xs-3">
-                    <h5 ng-bind="week+weatherData.weather[2].week" style="padding-left: 0.5em;"></h5>
+                    <h5 ng-bind="week+weatherData.weather[2].week" style="padding-left: 0.2em;"></h5>
                 </div>
                 <div class="col-xs-3">
-                    <h5 ng-bind="week+weatherData.weather[3].week" style="padding-left: 0.5em;"></h5>
+                    <h5 ng-bind="week+weatherData.weather[3].week" style="padding-left: 0.2em;"></h5>
                 </div>
                 <div class="col-xs-3">
-                    <h5 ng-bind="week+weatherData.weather[4].week" style="padding-left: 0.5em;"></h5>
+                    <h5 ng-bind="week+weatherData.weather[4].week" style="padding-left: 0.2em;"></h5>
                 </div>
             </div>
         </div>
         <div class="row" style="margin-top: 20px;">
             <div class="col-xs-9 col-xs-offset-2">
-                <div class="col-xs-3">
-                    <i ng-class="{'wi wi-day-sunny':sunny,'wi wi-day-cloudy':cloudy,'wi wi-day-hail':hail}">
-                    
-                </i>
-                </div>
-                <div class="col-xs-3">
-                    <i ng-class="{'wi wi-day-sunny':sunny,'wi wi-day-cloudy':cloudy,'wi wi-day-hail':hail}">
-                    
-                </i>
-                </div>
-                <div class="col-xs-3">
-                    <i ng-class="{'wi wi-day-sunny':sunny,'wi wi-day-cloudy':cloudy,'wi wi-day-hail':hail}">
-                    
-                </i>
-                </div>
-                <div class="col-xs-3">
-                    <i ng-class="{'wi wi-day-sunny':sunny,'wi wi-day-cloudy':cloudy,'wi wi-day-hail':hail}">
+                <div class="col-xs-3" ng-repeat="weatherIcon in weatherIcons track by $index">
+                    <i ng-class="{'wi wi-day-sunny':weatherIcon.sunny,'wi wi-day-cloudy':weatherIcon.cloudy,'wi wi-day-hail':weatherIcon.hail}">
                     
                 </i>
                 </div>
@@ -104,7 +89,7 @@
         <div class="row" style="margin-top: 20px;margin-bottom: 30px;">
             <div class="col-xs-9 col-xs-offset-2">
                 <div class="col-xs-3" ng-repeat="info in weatherInfo track by $index">
-                    <h5 ng-bind="info" style="margin-left: 1em;"></h5>
+                    <h5 ng-bind="info"></h5>
                 </div>                
             </div>
         </div>

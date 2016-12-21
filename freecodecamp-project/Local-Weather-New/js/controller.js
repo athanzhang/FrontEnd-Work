@@ -2,7 +2,7 @@ angular.module('weatherApp', [])
     .controller('WeatherController', ['$scope', 'cityFactory', 'weatherFactory', function($scope, cityFactory, weatherFactory) {
 
         // define location
-        var cityName,countryName,weatherInfo = [];
+        var cityName,countryName,weatherInfo = [],weatherIcons = [];
 
         
 
@@ -58,7 +58,7 @@ angular.module('weatherApp', [])
                         // store weather info into an array
 
                         for(var i=1;i<=4;i++) {
-                            weatherInfo.push(weather[i].info.day[1]);
+                            weatherInfo.push(weather[i].info.day[1]+" "+weather[i].info.day[2]+"° c");
                         }
 
                         $scope.weatherInfo = weatherInfo;
@@ -72,30 +72,32 @@ angular.module('weatherApp', [])
                         {
                             $scope.weatherImage = 'images/sunny.png';
                         }
-                        else if($scope.weatherData.realtime.weather.info.include('雨')) {
+                        else if($scope.weatherData.realtime.weather.info.includes('雨')) {
                             $scope.weatherImage = 'images/storm.png';
                         }
-
 
                         // according to the weather, change the icon of each day
 
                         for(var i=1;i<=4;i++) {
                             if($scope.weatherData.weather[i].info.day[1] == '多云' || $scope.weatherData.weather[i].info.day[1] == '阴') {
-                                $scope.cloudy = true;
+                              weatherIcons[i-1] = {cloudy:true,sunny:false,hail:false};
                             }
 
                             else if($scope.weatherData.weather[i].info.day[1] == '晴' || $scope.weatherData.weather[i].info.day[1] == '霾')
                             {
-                                $scope.sunny = true;
+                                weatherIcons[i-1] = {cloudy:false,sunny:true,hail:false};
                             }
 
                             else if($scope.weatherData.weather[i].info.day[1].includes('雨'))
                             {
-                                $scope.hail = true;
+                                weatherIcons[i-1] = {cloudy:false,sunny:false,hail:true};
                             }
 
                             
                         }
+
+                        $scope.weatherIcons = weatherIcons;
+                        
 
 
                         scopeChanged($scope);
@@ -172,22 +174,24 @@ angular.module('weatherApp', [])
                         // according to the weather, change the icon of each day
 
                         for(var i=1;i<=4;i++) {
-                            if($scope.weatherData.weather[i].info.day[1].includes('多云') || $scope.weatherData.weather[i].info.day[1].includes('阴')) {
-                                $scope.cloudy = true;
+                            if($scope.weatherData.weather[i].info.day[1] == '多云' || $scope.weatherData.weather[i].info.day[1] == '阴') {
+                              weatherIcons[i-1] = {cloudy:true,sunny:false,hail:false};
                             }
 
-                            if($scope.weatherData.weather[i].info.day[1].includes('晴') || $scope.weatherData.weather[i].info.day[1].includes('霾'))
+                            else if($scope.weatherData.weather[i].info.day[1] == '晴' || $scope.weatherData.weather[i].info.day[1] == '霾')
                             {
-                                $scope.sunny = true;
+                                weatherIcons[i-1] = {cloudy:false,sunny:true,hail:false};
                             }
 
-                            if($scope.weatherData.weather[i].info.day[1].includes('雨'))
+                            else if($scope.weatherData.weather[i].info.day[1].includes('雨'))
                             {
-                                $scope.hail = true;
+                                weatherIcons[i-1] = {cloudy:false,sunny:false,hail:true};
                             }
 
                             
                         }
+
+                        $scope.weatherIcons = weatherIcons;
 
 
                         scopeChanged($scope);
