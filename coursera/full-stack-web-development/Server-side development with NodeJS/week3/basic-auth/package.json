@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express-session": "^1.14.2",
+    "ms": "^0.7.2",
+    "session-file-store": "^1.0.0"
+  }
+}
