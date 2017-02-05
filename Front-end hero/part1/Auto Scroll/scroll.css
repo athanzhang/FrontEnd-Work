@@ -1,0 +1,20 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#demo {
+    overflow: hidden;
+    width: 240px;
+    height: 139px;
+    margin: 0 auto;
+}
+#demo1 {
+    
+}
+img {
+	display: block;
+}
+#demo2 {
+    
+}
